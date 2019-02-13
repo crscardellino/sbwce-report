@@ -73,6 +73,24 @@ has 700 million words words. As such, there is a need for gathering real
 examples of Spanish sentences, in large quantities, for the embeddings to be
 trained on.
 
+There are, however, resources available for the Spanish language, the most
+prominent ones being the Wikicorpus \cite{DBLP:conf/lrec/ReeseBCPR10} and ``El
+Corpus del Espa\~nol'' (CdE)\footnote{\url{https://www.corpusdelespanol.org/}}.
+
+The Wikicorpus is based on a large portion of the Spanish Wikipedia (based on a
+dump of 2006) and it contains approximately 120 million words. Up to the
+creation of SBWCE it was our goto resource of the Spanish language for creation
+of word embeddings. The problem is that the corpora is outdated plus it is has
+less of a 10\% of the data we managed to gather.
+
+Regarding the CdE, although it seems that they have available a much larger
+(and up to date) corpora, it seems only accessible through their web interface,
+thus making it much harder for the training of a word embeddings model.
+
+As these two are the most common resources available for the Spanish language
+(besides the whole Spanish Wikipedia by itself), we decided to go with our own
+version of a corpus where that we were able to work with.
+
 For this reason we gathered a corpus from different sources available online,
 not only the WikiMedia\footnote{\url{https://dumps.wikimedia.org/}} but other
 sources, many of them coming from parallel corpora (specially from the OPUS
@@ -83,15 +101,46 @@ others to experiment on it and run different kinds of analysis. Also, we used
 different text embeddings models in order to train different embeddings for the
 Spanish language, which we are also making available online.
 
-\section{Related Work}
+This work is structured as follow: Section \ref{sec:resources} describes the
+resources we used to create the corpus (the raw corpora and where it was
+gathered from) and the tools used to preprocess and clean the corpus, as well
+as to train the word embeddings. Followed by Section \ref{sec:corpus} which
+describes the corpus statistics in detail for its different versions (raw,
+cleaned and tagged). Section \ref{sec:models} describe the obtained models with
+the different embeddings algorithms including the chosen hyperparameters, and
+describe how to access the final models programatically. It also tests the
+models with some of the available tools for assessing word embeddings. Finally,
+Section \ref{sec:conclusions} ends with the general conclusions from this work
+as well as lay down the path for future work to be done.
 
-\section{Resources Description}
+\section{Resources Description}\label{sec:resources}
+
+It is important to note that this work does not come from my own content, but
+from unstructured text information available from different sources on the web.
+As such, this work has been possible thanks to all the community that helped in
+the creation of its content or the development of the tools used for processing
+the data (as all the tools used for this project come from the open source
+community).
 
 \subsection{Corpora}
 
+The SBWCE has been obtained from two main sources: the Spanish version of
+WikiMedia (i.e. Wikipedia, Wikibooks, Wikisource, etc.) and the Open Source
+Parallel Corpus (OPUS).
+
+\subsubsection{WikiMedia}
+
+% The WikiMedia dumps are from November 20th, 2018 (we try to keep this updated
+% once a year). There are also two extra resources: a corpus of projects from the
+% ``Honorable C\'amara de Diputados de la Naci\'on
+% Argentina''\footnote{\url{https://www.diputados.gov.ar/}} (i.e. the Chamber of
+% Deputies of Argentina) from 2016.
+
 \subsection{Tools}
 
-\section{Corpus}
+- Define the tools used for preprocessing/embeddings trained (check the github).
+
+\section{Corpus}\label{sec:corpus}
 
 \subsection{Raw Corpus}
 
@@ -99,13 +148,13 @@ Spanish language, which we are also making available online.
 
 \subsection{Clean Corpus}
 
-\section{Embeddings Models}
+\section{Embeddings Models}\label{sec:models}
 
 \subsection{Hyperparameters}
 
 \subsection{Results}
 
-\section{Conclusions and Future Work}
+\section{Conclusions and Future Work}\label{sec:conclusions}
 
 % \begin{equation}
 % \xi _{ij}(t)=P(x_{t}=i,x_{t+1}=j|y,v,w;\theta)= {\frac {\alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}{\sum _{i=1}^{N} \sum _{j=1}^{N} \alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}}

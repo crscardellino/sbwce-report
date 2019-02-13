@@ -31,14 +31,17 @@
 \maketitle
 
 \begin{abstract}
-  This article presents a new freely available corpus for the Spanish language, containing
-  a very large number of words (over 2 billion), that has been used to train two sets of
-  word embeddings using different models: Word2Vec's \cite{DBLP:journals/corr/abs-1301-3781} 
-  Continuous Bag-Of-Words (CBOW) and SkipGram model. Besides the base models from Word2Vec, 
-  we also present a version of the two models using FastText \cite{rehurek_lrec} training algorithm, 
-  thus having access to more information for the vectors using the character based n-grams given by 
-  FastText. The corpus has also been automatically annotated with lemmas and part-of-speech tags using 
-  Spacy \cite{spacy2} and is available for download at \url{https://crscardellino.github.io/SBWCE/}.
+  This article presents a new freely available corpus for the Spanish language,
+  containing a very large number of words (over 2 billion), that has been used
+  to train two sets of word embeddings using different models: Word2Vec's
+  \cite{DBLP:journals/corr/abs-1301-3781} Continuous Bag-Of-Words (CBOW) and
+  SkipGram model. Besides the base models from Word2Vec, we also present a
+  version of the two models using FastText \cite{rehurek_lrec} training
+  algorithm, thus having access to more information for the vectors using the
+  character based n-grams given by FastText. The corpus has also been
+  automatically annotated with lemmas and part-of-speech tags using Spacy
+  \cite{spacy2} and is available for download at
+  \url{https://crscardellino.github.io/SBWCE/}.
 \end{abstract}
 
 
@@ -48,29 +51,40 @@
 
 \section{Introduction}
 
-In the last couple of years, word embeddings have become a mainstream tool to work with in
-natural language processing (NLP) tasks. Many different state-of-the-art results have been improved
-by the adding of word embeddings to the stack of natural language resources \cite{Collobert:2011:NLP:1953048.2078186}.
+In the last couple of years, word embeddings have become a mainstream tool to
+work with in natural language processing (NLP) tasks. Many different
+state-of-the-art results have been improved by the adding of word embeddings to
+the stack of natural language resources
+\cite{Collobert:2011:NLP:1953048.2078186}.
 
-Techniques originally applied to machine vision tasks, such as deep learning architectures, who
-where originally too heavy to train with classical NLP feature engineer have been adapted, with
-the help of word embeddings, and reached impressive results in tasks that used to be dominated
-by complex feature engineering and shallow models.
+Techniques originally applied to machine vision tasks, such as deep learning
+architectures, who where originally too heavy to train with classical NLP
+feature engineer have been adapted, with the help of word embeddings, and
+reached impressive results in tasks that used to be dominated by complex
+feature engineering and shallow models.
 
-Word embeddings provide a way of making the process of feature engineer lighter, by being trained
-on unlabeled data. However, there is a challenge when it comes to training word embeddings, which 
-lies in the amount of data needed to train such models. Word embeddings work best the more data
-the model have to be trained with.
+Word embeddings provide a way of making the process of feature engineer
+lighter, by being trained on unlabeled data. However, there is a challenge when
+it comes to training word embeddings, which lies in the amount of data needed
+to train such models. Word embeddings work best the more data the model have to
+be trained with.
 
-This is not much of a problem with the English language, as a resource such as the Wikipedia alone
-has over 3 billion words. The problem of data arises for the other languages, such as is the case for
-Spanish, for which the Wikipedia has 700 million words words. As such, there is a need for gathering
-real examples of Spanish sentences, in large quantities, for the embeddings to be trained on.
+This is not much of a problem with the English language, as a resource such as
+the Wikipedia alone has over 3 billion words. The problem of data arises for
+the other languages, such as is the case for Spanish, for which the Wikipedia
+has 700 million words words. As such, there is a need for gathering real
+examples of Spanish sentences, in large quantities, for the embeddings to be
+trained on.
 
-For this reason we gathered a corpus from different sources available online, not only the 
-WikiMedia\footnote{\url{https://dumps.wikimedia.org/}} but other sources, many of them coming from parallel corpora 
-(specially from the OPUS project \cite{TIEDEMANN12.463}  to train machine translation
-systems.
+For this reason we gathered a corpus from different sources available online,
+not only the WikiMedia\footnote{\url{https://dumps.wikimedia.org/}} but other
+sources, many of them coming from parallel corpora (specially from the OPUS
+project \cite{TIEDEMANN12.463}).
+
+The text data was cleaned and processed in order to make it available for
+others to experiment on it and run different kinds of analysis. Also, we used
+different text embeddings models in order to train different embeddings for the
+Spanish language, which we are also making available online.
 
 \section{Related Work}
 
